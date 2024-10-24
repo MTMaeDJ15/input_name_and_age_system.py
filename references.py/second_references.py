@@ -1,3 +1,4 @@
+
 def collect_data():
     people = []  # List to store people's information
 
@@ -40,3 +41,5 @@ def main():
 # Run the program
 if __name__ == "__main__":
     main()
+
+# This is from my programmer friend.
