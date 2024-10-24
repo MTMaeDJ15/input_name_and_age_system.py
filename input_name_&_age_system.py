@@ -1,3 +1,4 @@
+
 coe_1_7 = {}
 
 # Loop1: used to ask user for next input
@@ -6,26 +7,25 @@ while True:
     while True:
         try:
             name = input("Pls input name: ")
-            age = int(input("Pls input age: "))
-            add = input("Pls input add: ")
             
             # Loop3: used to retry when number is not 11 characters
             while True:
-                number = input("Pls input number: ")
+                age = int(input("Pls input age: "))
 
-                if len(number) == 11:
+                if len(str(age)) == 2:
                     # this is to stop Loop3
                     break
+                else:
+                    len(str(age)) >= 2
+                    print("Please input 2 digit number!!")
 
-            coe_1_7[name] = {
+            coe_1_7[0] = {
+                "name" : name,
                 "age" : age,
-                "add" : add,
-                "number": number
             }
            
-            print(coe_1_7[name]["age"])
-            print(coe_1_7[name]["add"])
-            print(coe_1_7[name]["number"])
+            print(coe_1_7[0]["name"])
+            print(coe_1_7[0]["age"])
 
             retry = input("Retry? ")
             # this is to stop Loop2
@@ -33,8 +33,9 @@ while True:
         except:
             print("Ay mali!!!!")
 
+
     if retry == "n":
         # this is to stop Loop1
-        break
+        break 
     elif retry != "y":
         print("Invalid")
