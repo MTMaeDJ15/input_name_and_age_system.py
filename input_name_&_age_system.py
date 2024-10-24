@@ -1,4 +1,4 @@
-
+list = []
 coe_1_7 = {}
 
 # Loop1: used to ask user for next input
@@ -33,9 +33,9 @@ while True:
         except:
             print("Ay mali!!!!")
 
+    if retry != "yes":
+        list.append(coe_1_7)
 
-    if retry == "n":
-        # this is to stop Loop1
-        break 
-    elif retry != "y":
-        print("Invalid")
+    elif retry == "no":
+        break
+    print(list)
