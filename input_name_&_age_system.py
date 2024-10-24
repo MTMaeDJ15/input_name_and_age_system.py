@@ -1,10 +1,14 @@
+import emoji 
+
 def collect_data():
-    coe_1_7 = [] #This will be the list storage for the information inputted by the user.
+    data_entered = [] #This will be the list storage for the information inputted by the user.
 
     # Loop1: This is to ask the user to input information asked.
     while True:
             # Loop2: This is used to auto-retry when input raised an error.
         while True:
+            text1 = emoji.emojize('Kindly enter the information asked below.:grinning_face_with_smiling_eyes:')
+            print(text1)
             name = input("Input your name: ")
                     
                     # Loop3: This is used to retry when number is not 2 digits. 
@@ -16,29 +20,32 @@ def collect_data():
                     break
                 else:
                     len(str(age)) >= 2
-                    print("Ay mali!!!!") #Incase the user inputted greater than 2 digits required.
+                    print(" Please input a 2 digit number! ") #Incase the user inputted greater than 2 digits required.
 
-            coe_1_7.append({"name": name, "age": age})
+            data_entered.append({"name": name, "age": age})
 
-            retry = input("Retry? (y/n): ").lower()
+            retry = input("Do you want to input again?(yes/no): ").lower() 
 
-            if retry != "y":
+            if retry != "yes":
                 break #This is to stop Loop 2.
         
-        return coe_1_7
+        return data_entered
 
-def find_oldest(coe_1_7): # This define the oldest person and print it out.
-    oldest_person = max(coe_1_7, key=lambda person: person['age'])
+def find_oldest(data_entered): # This define the oldest person and print it out.
+    oldest_person = max(data_entered, key=lambda person: person['age'])
     print("\nThe oldest person is", oldest_person["name"], "who is", oldest_person["age"], "years old.")
 
 def main(): #To define the whole program collect, print, and find the oldest person.
-    coe_1_7 = collect_data()
+    data_entered = collect_data()
 
     print("\nList of People entered:")
-    for person in coe_1_7:
+    for person in data_entered:
         print(f"Name: {person['name']}, Age: {person['age']}")
     
-    find_oldest(coe_1_7)
+    find_oldest(data_entered)
+
+    text = emoji.emojize("It's Done. :blue_heart:")
+    print(text)
 
 if __name__ == "__main__":
     main()
